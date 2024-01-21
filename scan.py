@@ -36,10 +36,8 @@ registered_extensions = {
     'TAR': archives
 }
 
-
 def get_extensions(file_name):
     return Path(file_name).suffix[1:].upper()
-
 
 def scan(folder):
     for item in folder.iterdir():
@@ -48,7 +46,6 @@ def scan(folder):
                 folders.append(item)
                 scan(item)
             continue
-
         extension = get_extensions(file_name=item.name)
         new_name = folder/item.name
         if not extension:
@@ -62,15 +59,11 @@ def scan(folder):
                 unknown.add(extension)
                 others.append(new_name)
 
-
 if __name__ == '__main__':
     path = sys.argv[1]
     print(f"Start in {path}")
-
     folder = Path(path)
-
     scan(folder)
-
     print(f"images: {image_files}")
     print(f"videos: {video_files}")
     print(f"music: {music_files}")
