@@ -1,3 +1,5 @@
+#Скануємо папки
+
 import sys
 from pathlib import Path
 
