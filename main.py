@@ -1,3 +1,5 @@
+#Головний модуль
+
 import normalize
 import scan
 import sys
